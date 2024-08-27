@@ -1,0 +1,12 @@
+.login__layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(20rem, 48rem);
+  align-content: center;
+  justify-content: center;
+  gap: 2.4rem;
+  padding: 2rem;
+  background-color: var(--color-grey-100);
+  border-radius: 8px;
+  box-shadow: var(--shadow-large);
+}

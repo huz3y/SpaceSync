@@ -1,0 +1,48 @@
+.pageNotFound {
+  &__layout {
+    height: 100vh;
+    background-color: var(--color-red-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4.8rem;
+  }
+  &__box {
+    background-color: var(--color-red-100);
+    border: 2px solid var(--color-brand-200);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+
+    padding: 4.8rem;
+    flex: 0 1 80rem;
+    text-align: center;
+
+    & h1 {
+      margin-bottom: 3.2rem;
+      color: var(--color-red-800);
+      font-size: 2.4rem;
+    }
+
+    & p {
+      margin-top: 2rem;
+      color: var(--color-red-700);
+      font-size: 1.6rem;
+    }
+
+    & a {
+      margin-top: 3.2rem;
+      display: inline-block;
+      color: var(--color-brand-600);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid var(--color-brand-200);
+      padding-bottom: 0.2rem;
+
+      &:hover {
+        color: var(--color-brand-800);
+        border-color: var(--color-brand-800);
+        cursor: pointer;
+      }
+    }
+  }
+}
