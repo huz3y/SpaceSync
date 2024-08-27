@@ -1,0 +1,10 @@
+.logo {
+  text-align: center;
+  padding: 1rem;
+  &__img {
+    height: 9.6rem;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+}

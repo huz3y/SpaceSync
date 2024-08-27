@@ -1,0 +1,26 @@
+.appLayout {
+  display: grid;
+  grid-template-columns: 26rem 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+  position: relative;
+
+  &__main {
+    background-color: var(--color-grey-50);
+    padding: 4rem 4.8rem 6.4rem;
+    overflow-y: auto;
+  }
+
+  &__profile-popup {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background-color: var(--color-grey-0);
+    padding: 1.6rem 2.4rem;
+    border: 1px solid var(--color-grey-100);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-medium);
+    z-index: 1000;
+    min-width: 30rem;
+  }
+}
