@@ -1,5 +1,5 @@
 function Settings() {
-  return <h1>Update hotel settings</h1>;
+  return <h1>Update settings</h1>;
 }
 
 export default Settings;
