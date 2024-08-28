@@ -12,7 +12,7 @@ function SpaceTable() {
     isSuccess,
     isError,
   } = useQuery({
-    queryKey: ["space"],
+    queryKey: ["spaces"],
     queryFn: getSpaces,
   });
 

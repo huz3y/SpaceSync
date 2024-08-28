@@ -8,3 +8,12 @@ export async function getSpaces() {
   }
   return data;
 }
+
+export async function deleteSpace(id) {
+  const { data, error } = await supabase.from("spaces").delete().eq("id", id);
+  if (error) {
+    console.error(error);
+    throw new Error("Unable to delete Space!");
+  }
+  return data;
+}
