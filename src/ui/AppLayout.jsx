@@ -7,7 +7,9 @@ function AppLayout() {
     <div className="appLayout">
       <Sidebar />
       <main className="appLayout__main">
-        <Outlet />
+        <div className="appLayout__container">
+          <Outlet />
+        </div>
         <div className="appLayout__profile-popup">
           <ProfilePopup />
         </div>
