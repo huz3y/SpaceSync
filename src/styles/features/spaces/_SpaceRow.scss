@@ -1,0 +1,30 @@
+.SpaceRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  column-gap: 2rem;
+  align-items: center;
+  padding: 1.4rem 2rem;
+  background-color: var(--color-grey-50);
+  border-bottom: 1px solid var(--color-grey-200);
+
+  &:nth-child(even) {
+    background-color: var(--color-grey-100);
+  }
+
+  &__cabin {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-theme-700);
+  }
+
+  &__features {
+    font-size: 1.4rem;
+    color: var(--color-grey-700);
+    font-style: italic;
+  }
+
+  &__price {
+    font-weight: 700;
+    color: var(--color-green-700);
+  }
+}
