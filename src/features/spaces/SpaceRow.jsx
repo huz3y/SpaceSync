@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { formatCurrency } from "../../utils/convertCurrency";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteSpace } from "../../../services/apiSpaces";
+import toast from "react-hot-toast";
 
 function SpaceRow({ space }) {
   const { id: spaceId, name, max_capacity, unique_features, price } = space;
@@ -11,11 +12,11 @@ function SpaceRow({ space }) {
   const { isPending, mutate } = useMutation({
     mutationFn: (id) => deleteSpace(id),
     onSuccess: () => {
-      alert("The space was deleted😊");
+      toast.success("The space was deleted😊");
       queryClient.invalidateQueries({ queryKey: ["spaces"] });
     },
     onError: (err) => {
-      alert(err.message);
+      toast.error(err.message);
     },
   });
 
