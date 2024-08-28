@@ -1,9 +1,11 @@
+import Heading from "../ui/Heading";
+
 function Dashboard() {
   return (
-    <div className="row--horizontal">
+    <Heading>
       <h1>Dashboard</h1>
       <p>TEST</p>
-    </div>
+    </Heading>
   );
 }
 

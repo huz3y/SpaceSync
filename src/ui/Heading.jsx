@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
 
 function Heading({ children }) {
-  return <div className="row--horizontal">{children}</div>;
+  return (
+    <div className="row--horizontal margin__bottom--medium margin__top--medium">
+      {children}
+    </div>
+  );
 }
 
 Heading.propTypes = {

@@ -1,5 +1,11 @@
+import Heading from "../ui/Heading";
+
 function CreateUser() {
-  return <h1>Create a new user</h1>;
+  return (
+    <Heading>
+      <h1>Create a new user</h1>
+    </Heading>
+  );
 }
 
 export default CreateUser;

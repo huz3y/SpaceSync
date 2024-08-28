@@ -1,11 +1,13 @@
 import SpaceTable from "../features/spaces/SpaceTable";
+import Heading from "../ui/Heading";
 
 function Spaces() {
   return (
     <>
-      <div className="row--horizontal">
+      <Heading>
         <h1>Spaces</h1>
-      </div>
+        <p>Filter / Sort</p>
+      </Heading>
       <div className="row--vertical">
         <SpaceTable />
       </div>

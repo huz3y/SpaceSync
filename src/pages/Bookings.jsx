@@ -1,9 +1,11 @@
+import Heading from "../ui/Heading";
+
 function Bookings() {
   return (
-    <div className="row--horizontal">
+    <Heading>
       <h1>Bookings</h1>
       <p>TEST</p>
-    </div>
+    </Heading>
   );
 }
 
