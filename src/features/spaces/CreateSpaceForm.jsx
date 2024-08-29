@@ -9,7 +9,7 @@ import FormRow from "../../ui/FormRow";
 import { useCreateSpace } from "./useCreateSpace";
 import { useEditSpace } from "./useEditSpace";
 
-function CreateSpaceForm({ selectedSpace = {} }) {
+function CreateSpaceForm({ selectedSpace = {}, onToggle }) {
   const { createSpace, isAdding } = useCreateSpace();
   const { editSpace, isEditing } = useEditSpace();
 
@@ -25,13 +25,44 @@ function CreateSpaceForm({ selectedSpace = {} }) {
   } = useForm({ defaultValues: isEdit ? editData : {} });
 
   function onSubmit(data) {
-    if (isEdit)
-      editSpace({ newSpace: data, id: editId }, { onSuccess: () => reset() });
-    else createSpace(data, { onSuccess: () => reset() });
+    if (isEdit) {
+      editSpace(
+        { newSpace: data, id: editId },
+        {
+          onSuccess: () => {
+            reset();
+            onToggle();
+          },
+          onError: () => {
+            toast.error("Failed to update the space.");
+          },
+        }
+      );
+    } else {
+      createSpace(data, {
+        onSuccess: () => {
+          reset();
+          onToggle();
+        },
+        onError: () => {
+          toast.error("Failed to create the space.");
+        },
+      });
+    }
   }
 
   function onError() {
     toast.error("Oops! There are some errors in the form.");
+  }
+
+  function handleCancel() {
+    reset({
+      name: "",
+      max_capacity: "",
+      unique_features: "",
+      price: "",
+    });
+    onToggle();
   }
 
   return (
@@ -102,7 +133,12 @@ function CreateSpaceForm({ selectedSpace = {} }) {
       </FormRow>
 
       <div className="form__row form__row--button">
-        <Button variation="secondary" type="reset" disabled={isPending}>
+        <Button
+          variation="secondary"
+          type="reset"
+          disabled={isPending}
+          onClick={handleCancel}
+        >
           Cancel
         </Button>
         <Button type="submit" disabled={isPending}>
@@ -121,6 +157,7 @@ function CreateSpaceForm({ selectedSpace = {} }) {
 
 CreateSpaceForm.propTypes = {
   selectedSpace: PropTypes.object,
+  onToggle: PropTypes.func.isRequired,
 };
 
 export default CreateSpaceForm;

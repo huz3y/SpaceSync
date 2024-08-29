@@ -5,7 +5,15 @@ import Button from "../ui/Button";
 import CreateSpaceForm from "../features/spaces/CreateSpaceForm";
 
 function Spaces() {
-  const [hideForm, setHideForm] = useState(true);
+  const [isFormVisible, setIsFormVisible] = useState(false);
+
+  const openForm = () => {
+    if (!isFormVisible) setIsFormVisible(true);
+  };
+
+  const closeForm = () => {
+    if (isFormVisible) setIsFormVisible(false);
+  };
 
   return (
     <>
@@ -15,8 +23,8 @@ function Spaces() {
       </Heading>
       <div className="row--vertical">
         <SpaceTable />
-        <Button onClick={() => setHideForm(!hideForm)}>Create Space</Button>
-        {!hideForm && <CreateSpaceForm />}
+        <Button onClick={openForm}>Create new Space</Button>
+        {isFormVisible && <CreateSpaceForm onToggle={closeForm} />}
       </div>
     </>
   );
