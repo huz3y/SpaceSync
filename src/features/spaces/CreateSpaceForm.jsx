@@ -1,15 +1,20 @@
 import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { mutateSpace } from "../../../services/apiSpaces";
 import Input from "../../ui/Input";
 import Form from "../../ui/Form";
 import Button from "../../ui/Button";
 import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";
+import { useCreateSpace } from "./useCreateSpace";
+import { useEditSpace } from "./useEditSpace";
 
 function CreateSpaceForm({ selectedSpace = {} }) {
+  const { createSpace, isAdding } = useCreateSpace();
+  const { editSpace, isEditing } = useEditSpace();
+
+  const isPending = isAdding || isEditing;
+
   const { id: editId, ...editData } = selectedSpace;
   const isEdit = Boolean(editId);
   const {
@@ -18,39 +23,11 @@ function CreateSpaceForm({ selectedSpace = {} }) {
     reset,
     formState: { errors },
   } = useForm({ defaultValues: isEdit ? editData : {} });
-  const queryClient = useQueryClient();
-
-  //Adding a new space
-  const { mutate: createSpace, isPending: isAdding } = useMutation({
-    mutationFn: mutateSpace,
-    onSuccess: () => {
-      toast.success("A new Space has been added for you 😊");
-      queryClient.invalidateQueries({ queryKey: ["spaces"] });
-      reset();
-    },
-    onError: (err) => {
-      toast.error(err.message);
-    },
-  });
-
-  //Editing an existing space
-  const { mutate: editSpace, isPending: isEditing } = useMutation({
-    mutationFn: ({ newSpace, id }) => mutateSpace(newSpace, id),
-    onSuccess: () => {
-      toast.success("Your space has been updated! 🌟");
-      queryClient.invalidateQueries({ queryKey: ["spaces"] });
-      reset();
-    },
-    onError: (err) => {
-      toast.error(err.message);
-    },
-  });
-
-  const isPending = isAdding || isEditing;
 
   function onSubmit(data) {
-    if (isEdit) editSpace({ newSpace: data, id: editId });
-    else createSpace(data);
+    if (isEdit)
+      editSpace({ newSpace: data, id: editId }, { onSuccess: () => reset() });
+    else createSpace(data, { onSuccess: () => reset() });
   }
 
   function onError() {

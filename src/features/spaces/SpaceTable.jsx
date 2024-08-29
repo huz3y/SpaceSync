@@ -1,22 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
-import { getSpaces } from "../../../services/apiSpaces";
 import Spinner from "../../ui/Spinner";
 import SpaceRow from "./SpaceRow";
+import { useSpaces } from "./useSpaces";
 
 function SpaceTable() {
-  const {
-    isPending,
-    data: spaces,
-    error,
-    isLoading,
-    isSuccess,
-    isError,
-  } = useQuery({
-    queryKey: ["spaces"],
-    queryFn: getSpaces,
-  });
-
-  console.log({ isPending, isLoading, isSuccess, isError });
+  const { isPending, spaces, error } = useSpaces();
 
   if (isPending) return <Spinner />;
   if (error) return <div>Spaces failed to load</div>;

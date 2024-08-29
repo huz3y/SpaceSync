@@ -1,28 +1,15 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { formatCurrency } from "../../utils/convertCurrency";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { deleteSpace } from "../../../services/apiSpaces";
-import toast from "react-hot-toast";
 import CreateSpaceForm from "./CreateSpaceForm";
+import { useDeleteSpace } from "./useDeleteSpace";
 
 function SpaceRow({ space }) {
   const [hideForm, setHideForm] = useState(true);
 
   const { id: spaceId, name, max_capacity, unique_features, price } = space;
 
-  const queryClient = useQueryClient();
-
-  const { isPending, mutate } = useMutation({
-    mutationFn: (id) => deleteSpace(id),
-    onSuccess: () => {
-      toast.success("The Space was deleted 😊");
-      queryClient.invalidateQueries({ queryKey: ["spaces"] });
-    },
-    onError: (err) => {
-      toast.error(err.message);
-    },
-  });
+  const { isPending, mutate } = useDeleteSpace();
 
   return (
     <>
