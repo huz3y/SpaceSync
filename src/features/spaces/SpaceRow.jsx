@@ -14,6 +14,15 @@ function SpaceRow({ space }) {
 
   const toggleForm = () => setHideForm((prevHideForm) => !prevHideForm);
 
+  const handleDelete = () => {
+    const isConfirmed = window.confirm(
+      "Are you sure you want to delete this space?"
+    );
+    if (isConfirmed) {
+      mutate(spaceId);
+    }
+  };
+
   return (
     <>
       <div className="SpaceRow">
@@ -31,7 +40,7 @@ function SpaceRow({ space }) {
           </button>
           <button
             className="button button--icon button--danger"
-            onClick={() => mutate(spaceId)}
+            onClick={handleDelete}
             disabled={isPending}
             aria-label="Delete Space"
           >
