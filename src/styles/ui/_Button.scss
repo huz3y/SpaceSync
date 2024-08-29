@@ -49,21 +49,36 @@
   }
 
   &--danger {
-    color: var(--color-red-100);
-    background-color: var(--color-red-600);
+    color: var(--color-red-600);
+    background-color: var(--color-red-300);
     border: none;
 
     &:hover {
       background-color: var(--color-red-700);
+      color: var(--color-grey-0);
     }
 
     &:active {
       background-color: var(--color-red-800);
+      color: var(--color-grey-0);
     }
 
     &:disabled {
       background-color: var(--color-grey-300);
+      color: var(--color-grey-500);
       cursor: not-allowed;
     }
+  }
+
+  &--icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem;
+    margin: 0.7rem;
+    font-size: 1.6rem;
+    border-radius: 50%;
+    width: 3.2rem;
+    height: 3.2rem;
   }
 }
