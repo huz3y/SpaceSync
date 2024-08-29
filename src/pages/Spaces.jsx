@@ -19,7 +19,6 @@ function Spaces() {
     <>
       <Heading>
         <h1>Spaces</h1>
-        <p>Filter / Sort</p>
       </Heading>
       <div className="row--vertical">
         <SpaceTable />
