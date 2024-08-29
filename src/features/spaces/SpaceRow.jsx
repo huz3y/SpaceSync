@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { formatCurrency } from "../../utils/convertCurrency";
 import { FiEdit, FiXCircle, FiTrash2 } from "react-icons/fi";
 import CreateSpaceForm from "./CreateSpaceForm";
+import Table from "../../ui/Table";
 import { useDeleteSpace } from "./useDeleteSpace";
 
 function SpaceRow({ space }) {
@@ -25,12 +26,12 @@ function SpaceRow({ space }) {
 
   return (
     <>
-      <div className="SpaceRow">
-        <div className="SpaceRow__space">{name}</div>
-        <div className="SpaceRow__capacity">Up to {max_capacity} people</div>
-        <div className="SpaceRow__features">{unique_features}</div>
-        <div className="SpaceRow__price">{formatCurrency(price)}</div>
-        <div className="SpaceRow__actions">
+      <Table.Row>
+        <div>{name}</div>
+        <div>Up to {max_capacity} people</div>
+        <div>{unique_features}</div>
+        <div>{formatCurrency(price)}</div>
+        <div>
           <button
             className="button button--icon button--secondary"
             onClick={toggleForm}
@@ -47,7 +48,7 @@ function SpaceRow({ space }) {
             <FiTrash2 />
           </button>
         </div>
-      </div>
+      </Table.Row>
       {!hideForm && (
         <CreateSpaceForm selectedSpace={space} onToggle={toggleForm} />
       )}

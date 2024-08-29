@@ -1,5 +1,6 @@
 import Spinner from "../../ui/Spinner";
 import SpaceRow from "./SpaceRow";
+import Table from "../../ui/Table";
 import { useSpaces } from "./useSpaces";
 
 function SpaceTable() {
@@ -9,18 +10,19 @@ function SpaceTable() {
   if (error) return <div>Spaces failed to load</div>;
 
   return (
-    <div className="SpaceTable">
-      <header className="SpaceTable__header">
+    <Table columns="2fr 1fr 2fr 1fr 1fr">
+      <Table.Header>
         <div>Space</div>
         <div>Capacity</div>
         <div>Features</div>
         <div>Price/Hour</div>
         <div></div>
-      </header>
-      {spaces.map((space) => (
-        <SpaceRow key={space.id} space={space} />
-      ))}
-    </div>
+      </Table.Header>
+      <Table.Body
+        data={spaces}
+        render={(space) => <SpaceRow key={space.id} space={space} />}
+      />
+    </Table>
   );
 }
 
