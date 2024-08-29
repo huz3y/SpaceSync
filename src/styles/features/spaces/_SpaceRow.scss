@@ -1,6 +1,6 @@
 .SpaceRow {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  grid-template-columns: 1fr 0.5fr 2fr 0.5fr 0.5fr;
   column-gap: 2rem;
   align-items: center;
   padding: 1.4rem 2rem;
@@ -13,6 +13,7 @@
 
   &__space {
     font-size: 1.6rem;
+    text-transform: uppercase;
     font-weight: 600;
     color: var(--color-theme-700);
   }
