@@ -61,7 +61,7 @@ export default function App() {
             },
           },
           style: {
-            fontSize: "1rem",
+            fontSize: "1.3rem",
             maxWidth: "40rem",
             padding: "1.6rem 2.4rem",
             backgroundColor: "var(--color-grey-0)",
