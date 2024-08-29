@@ -9,11 +9,17 @@ export async function getSpaces() {
   return data;
 }
 
-export async function createSpace(newSpace) {
-  const { data, error } = await supabase
-    .from("spaces")
-    .insert([newSpace])
-    .select();
+export async function mutateSpace(newSpace, id) {
+  let query = supabase.from("spaces");
+  //Creating a space
+  if (!id) {
+    query = query.insert([newSpace]);
+  }
+  //Update a space
+  if (id) {
+    query = query.update(newSpace).eq("id", id).select();
+  }
+  const { data, error } = await query.select().single();
 
   if (error) {
     console.error(error);
