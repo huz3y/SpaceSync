@@ -27,7 +27,7 @@ function SpaceTable() {
         <div>Space</div>
         <div>Capacity</div>
         <div>Features</div>
-        <div>Price</div>
+        <div>Price/Hour</div>
         <div></div>
       </header>
       {spaces.map((space) => (
