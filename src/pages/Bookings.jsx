@@ -1,4 +1,5 @@
 import BookingTable from "../features/bookings/BookingTable";
+import BookingTableOperations from "../features/bookings/BookingTableOperations";
 import Heading from "../ui/Heading";
 
 function Bookings() {
@@ -6,7 +7,7 @@ function Bookings() {
     <>
       <Heading>
         <h1>Bookings</h1>
-        <p>TEST</p>
+        <BookingTableOperations />
       </Heading>
       <BookingTable />
     </>
