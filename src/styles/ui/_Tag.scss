@@ -1,0 +1,32 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &--blue {
+    color: var(--color-blue-900);
+    background-color: var(--color-blue-200);
+  }
+
+  &--green {
+    color: var(--color-green-900);
+    background-color: var(--color-green-200);
+  }
+
+  &--silver {
+    color: var(--color-silver-900);
+    background-color: var(--color-silver-200);
+  }
+
+  &--red {
+    color: var(--color-red-900);
+    background-color: var(--color-red-200);
+  }
+}

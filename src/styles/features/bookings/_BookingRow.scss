@@ -1,0 +1,63 @@
+.booking-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  column-gap: 2.4rem;
+  align-items: center;
+  padding: 1.2rem 2.4rem;
+  border-bottom: 1px solid var(--color-grey-200);
+
+  &:nth-child(even) {
+    background-color: var(--color-grey-100);
+  }
+
+  &__amount {
+    font-weight: 700;
+    color: var(--color-green-700);
+  }
+
+  &__space {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--color-theme-700);
+  }
+
+  &__client {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    & span:first-child {
+      font-weight: 500;
+      color: var(--color-grey-700);
+    }
+
+    & span:last-child {
+      color: var(--color-grey-500);
+      font-size: 1.2rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 1.4rem;
+    color: var(--color-grey-600);
+
+    & div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+
+    .button {
+      padding: 0.8rem 1.2rem;
+      font-size: 1.2rem;
+    }
+  }
+}

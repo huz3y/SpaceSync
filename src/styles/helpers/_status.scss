@@ -1,0 +1,15 @@
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--color-red-800);
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--color-theme-700);
+}
