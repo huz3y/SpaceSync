@@ -29,8 +29,4 @@ Select.propTypes = {
   type: PropTypes.oneOf(["white", "default"]),
 };
 
-Select.defaultProps = {
-  type: "default",
-};
-
 export default Select;

@@ -25,12 +25,12 @@ function SortBy({ options }) {
 SortBy.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
+      value: PropTypes.string,
+      label: PropTypes.string,
     })
-  ).isRequired,
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  ),
+  value: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 export default SortBy;
