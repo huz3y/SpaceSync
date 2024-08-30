@@ -27,10 +27,10 @@ function SpaceRow({ space }) {
   return (
     <>
       <Table.Row>
-        <div>{name}</div>
-        <div>Up to {max_capacity} people</div>
-        <div>{unique_features}</div>
-        <div>{formatCurrency(price)}</div>
+        <div className="spaceRow__space">{name}</div>
+        <div className="spaceRow__capacity">Up to {max_capacity} people</div>
+        <div className="spaceRow__features">{unique_features}</div>
+        <div className="spaceRow__price">{formatCurrency(price)}</div>
         <div>
           <button
             className="button button--icon button--secondary"
