@@ -5,18 +5,6 @@
   border-radius: var(--border-radius-medium);
   overflow: hidden;
 
-  &__row {
-    padding: 1.2rem 2.4rem;
-
-    &:not(:last-child) {
-      border-bottom: 1px solid var(--color-grey-100);
-    }
-
-    &:nth-child(even) {
-      background-color: var(--color-grey-50);
-    }
-  }
-
   &__header,
   &__row {
     display: grid;
@@ -36,10 +24,12 @@
   }
 
   &__row {
-    padding: 1.2rem 2.4rem;
-
     &:not(:last-child) {
       border-bottom: 1px solid var(--color-grey-100);
+    }
+
+    &:nth-child(even) {
+      background-color: var(--color-grey-50);
     }
   }
 
