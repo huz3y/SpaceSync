@@ -59,7 +59,7 @@ function SpaceRow({ space }) {
 SpaceRow.propTypes = {
   space: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
     max_capacity: PropTypes.number.isRequired,
     unique_features: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
