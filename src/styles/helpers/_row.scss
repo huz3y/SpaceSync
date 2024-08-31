@@ -3,7 +3,8 @@
   /* Horizontal */
   &--horizontal {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 9rem;
     align-items: center;
   }
   /* Vertical */

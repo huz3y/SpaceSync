@@ -1,0 +1,55 @@
+.profile-popup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-green-100);
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--shadow-small);
+
+  &__image {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-theme-600);
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    color: var(--color-grey-800);
+    font-weight: 500;
+  }
+
+  &__icon-button,
+  &__logout {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    color: var(--color-theme-600);
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--color-theme-700);
+    }
+    &:focus-within {
+      outline: none;
+    }
+  }
+
+  &__logout {
+    color: var(--color-red-700);
+
+    &:hover {
+      color: var(--color-red-800);
+    }
+    &:active {
+      color: var(--color-red-900);
+    }
+  }
+}
