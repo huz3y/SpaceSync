@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-function FormRow({ label, id, error, children }) {
+function FormRow({ label, id, error, children, className }) {
   const inputId = id || children.props.id;
 
   return (
-    <div className="form__row">
+    <div className={`form__row ${className}`}>
       {label && (
-        <label className="form__label" htmlFor={inputId}>
+        <label className={`form__label`} htmlFor={inputId}>
           {label}
         </label>
       )}
@@ -20,6 +20,7 @@ function FormRow({ label, id, error, children }) {
 FormRow.propTypes = {
   label: PropTypes.string,
   id: PropTypes.string,
+  className: PropTypes.string,
   error: PropTypes.shape({
     message: PropTypes.string,
   }),
