@@ -70,5 +70,5 @@ To get started with SpaceSync, follow the instructions below:
 
 ### Links
 
-**Live-url:**space-sync-azure.vercel.app
-**GitHub-repo:**https://github.com/huz3y/SpaceSync.git
+- **Live-url:** space-sync-azure.vercel.app
+- **GitHub-repo:** https://github.com/huz3y/SpaceSync.git
