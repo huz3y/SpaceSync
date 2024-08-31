@@ -5,6 +5,8 @@
 
 @import "features/authentication/LoginForm";
 @import "features/authentication/Signup";
+@import "features/authentication/UpdatePasswordForm";
+@import "features/authentication/UpdateUserDataForm";
 @import "features/bookings/BookingDataBox";
 @import "features/bookings/BookingDetail";
 @import "features/bookings/BookingRow";
@@ -26,6 +28,7 @@
 @import "ui/ButtonGroup";
 @import "ui/ButtonText";
 @import "ui/Checkbox";
+@import "ui/FileInput";
 @import "ui/Filter";
 @import "ui/Form";
 @import "ui/Input";

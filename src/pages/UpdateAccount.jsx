@@ -1,3 +1,5 @@
+import UpdatePasswordForm from "../features/authentication/UpdatePasswordForm";
+import UpdateUserDataForm from "../features/authentication/UpdateUserDataForm";
 import Heading from "../ui/Heading";
 
 function UpdateAccount() {
@@ -8,11 +10,11 @@ function UpdateAccount() {
       </Heading>
       <div className="row--vertical">
         <h3>Update user data</h3>
-        <p>Update user data form</p>
+        <UpdateUserDataForm />
       </div>
       <div className="row--vertical">
         <h3>Update password</h3>
-        <p>Update user password form</p>
+        <UpdatePasswordForm />
       </div>
     </>
   );
