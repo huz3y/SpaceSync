@@ -1,0 +1,23 @@
+.checkbox {
+  display: flex;
+  gap: 1.6rem;
+
+  &__input {
+    height: 2.4rem;
+    width: 2.4rem;
+    outline-offset: 2px;
+    transform-origin: 0;
+    accent-color: var(--color-theme-600);
+
+    &:disabled {
+      accent-color: var(--color-theme-400);
+    }
+  }
+
+  &__label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+}
