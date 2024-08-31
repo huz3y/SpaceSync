@@ -2,10 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Input = React.forwardRef(
-  (
-    { type = "text", id = "", placeholder = "", defaultValue = "", ...props },
-    ref
-  ) => {
+  ({ type = "text", id = "", placeholder = "", ...props }, ref) => {
     return (
       <input
         type={type}
@@ -13,7 +10,6 @@ const Input = React.forwardRef(
         ref={ref}
         className="input__element"
         placeholder={placeholder}
-        defaultValue={defaultValue}
         {...props}
       />
     );
