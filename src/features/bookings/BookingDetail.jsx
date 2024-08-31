@@ -10,7 +10,6 @@ import { useBooking } from "./useBooking";
 function BookingDetail() {
   const { booking, isLoading } = useBooking();
   const navigate = useNavigate();
-  console.log(booking);
 
   const statusToTagName = {
     unconfirmed: "silver",
@@ -42,9 +41,9 @@ function BookingDetail() {
         <Button
           variation="primary"
           disabled={status !== "unconfirmed"}
-          onClick={() => navigate(`/create-booking/${id}`)}
+          onClick={() => navigate(`/bookings/create-booking/${id}`)}
         >
-          Confirm Booking
+          Create Booking
         </Button>
       </ButtonGroup>
     </>

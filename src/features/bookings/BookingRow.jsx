@@ -1,9 +1,12 @@
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 import { format, isToday } from "date-fns";
 import Tag from "../../ui/Tag";
 import { formatCurrency } from "../../utils/convertCurrency";
 import { formatDistanceFromNow } from "../../utils/formatDistanceFromNow";
 import { useNavigate } from "react-router-dom";
+import { useComplete } from "../create-booking/useComplete";
+import Button from "../../ui/Button";
 
 function BookingRow({
   booking: {
@@ -21,14 +24,15 @@ function BookingRow({
     clients;
   const { name: spaceName = "Unknown Space" } = spaces;
 
+  const { complete } = useComplete();
+  const navigate = useNavigate();
+
   const statusToTagName = {
     unconfirmed: "silver",
     completed: "green",
     booked: "blue",
     default: "grey",
   };
-
-  const navigate = useNavigate();
 
   const parsedDate = date ? new Date(date) : null;
   const isValidDate = parsedDate instanceof Date && !isNaN(parsedDate);
@@ -40,9 +44,23 @@ function BookingRow({
     ? format(parsedDate, "hh:mm a")
     : "Invalid time";
 
-  // Ensure status is a valid string before calling replace
   const displayStatus =
     typeof status === "string" ? status.replace("-", " ") : "Unknown";
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const currentTime = new Date();
+      const bookingEndTime = new Date(
+        parsedDate.getTime() + hour * 60 * 60 * 1000
+      );
+
+      if (currentTime > bookingEndTime && status !== "completed") {
+        complete(id);
+      }
+    }, 3600000);
+
+    return () => clearInterval(interval);
+  }, [parsedDate, hour, id, status, complete]);
 
   return (
     <div className="booking-row">
@@ -76,12 +94,9 @@ function BookingRow({
       <div className="booking-row__amount">{formatCurrency(price)}</div>
 
       <div>
-        <button
-          className="button button--primary"
-          onClick={() => navigate(`/bookings/${id}`)}
-        >
+        <Button type="primary" onClick={() => navigate(`/bookings/${id}`)}>
           Details
-        </button>
+        </Button>
       </div>
     </div>
   );

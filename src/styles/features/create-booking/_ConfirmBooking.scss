@@ -1,0 +1,25 @@
+.confirm-booking {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  &__box {
+    background-color: var(--color-grey-0);
+    border: 1px solid var(--color-grey-100);
+    border-radius: var(--border-radius-md);
+    padding: 2.4rem 4rem;
+    margin-bottom: 1.6rem;
+  }
+
+  &__checkbox-group {
+    margin-bottom: 2rem;
+  }
+
+  &__button-group {
+    display: flex;
+    gap: 1.6rem;
+  }
+}

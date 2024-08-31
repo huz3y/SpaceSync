@@ -88,7 +88,7 @@ export async function getStaysTodayActivity() {
 
   if (error) {
     console.error(error);
-    throw new Error("Bookings could not be loaded");
+    throw new Error("Unable to load bookings");
   }
   return data;
 }
@@ -103,7 +103,7 @@ export async function updateBooking(id, obj) {
 
   if (error) {
     console.error(error);
-    throw new Error("Booking could not be updated");
+    throw new Error("Unable to update booking");
   }
   return data;
 }
@@ -113,7 +113,7 @@ export async function deleteBooking(id) {
 
   if (error) {
     console.error(error);
-    throw new Error("Booking could not be deleted");
+    throw new Error("Unable to delete booking");
   }
   return data;
 }
