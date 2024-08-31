@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { deleteSpace } from "../../../services/apiSpaces";
+import { deleteSpace } from "../../services/apiSpaces";
 
 export function useDeleteSpace() {
   const queryClient = useQueryClient();

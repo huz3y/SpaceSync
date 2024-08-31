@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getSpaces } from "../../../services/apiSpaces";
+import { getSpaces } from "../../services/apiSpaces";
 
 export function useSpaces() {
   const {
