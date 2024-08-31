@@ -1,0 +1,100 @@
+.signup-form {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2.4rem;
+  background-color: var(--color-grey-0);
+  border: 1px solid var(--color-grey-200);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-large);
+
+  .signup-form__row {
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .signup-form__label {
+      display: block;
+      font-weight: 600;
+      color: var(--color-grey-800);
+      margin-bottom: 0.8rem;
+      font-size: 1.4rem;
+    }
+
+    .signup-form__input {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      font-size: 1.4rem;
+      border-radius: var(--border-radius-small);
+      border: 1px solid var(--color-grey-300);
+      background-color: var(--color-grey-0);
+      box-shadow: var(--shadow-small);
+
+      &:focus {
+        border-color: var(--color-theme-500);
+        box-shadow: 0 0 0 3px var(--color-theme-200);
+      }
+
+      &:disabled {
+        background-color: var(--color-grey-100);
+        cursor: not-allowed;
+      }
+    }
+
+    .signup-form__error {
+      font-size: 1.2rem;
+      color: var(--color-red-700);
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+  }
+
+  .signup-form__buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.6rem;
+    margin-top: 2rem;
+
+    .button {
+      flex: 1;
+      padding: 1rem 1.6rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-align: center;
+      border-radius: var(--border-radius-medium);
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+      &--secondary {
+        background-color: var(--color-grey-50);
+        color: var(--color-grey-800);
+        border: 1px solid var(--color-grey-300);
+
+        &:hover:not(:disabled) {
+          background-color: var(--color-grey-100);
+        }
+
+        &:disabled {
+          background-color: var(--color-grey-200);
+          cursor: not-allowed;
+        }
+      }
+
+      &--primary {
+        background-color: var(--color-theme-600);
+        color: var(--color-grey-50);
+        border: none;
+
+        &:hover:not(:disabled) {
+          background-color: var(--color-theme-700);
+        }
+
+        &:disabled {
+          background-color: var(--color-theme-300);
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}

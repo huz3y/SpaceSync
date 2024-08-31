@@ -96,9 +96,7 @@ function BookingRow({
       <div className="booking-row__amount">{formatCurrency(price)}</div>
 
       <div>
-        <Button type="primary" onClick={() => navigate(`/bookings/${id}`)}>
-          Details
-        </Button>
+        <Button onClick={() => navigate(`/bookings/${id}`)}>Details</Button>
       </div>
     </div>
   );

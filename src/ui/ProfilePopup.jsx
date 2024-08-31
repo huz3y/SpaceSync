@@ -1,18 +1,32 @@
 import { HiOutlineUserCircle, HiOutlineLogout } from "react-icons/hi";
+import { useLogout } from "../features/authentication/useLogout";
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../features/authentication/useUser";
 
 function ProfilePopup() {
+  const { logout, isLoading } = useLogout();
+  const { user } = useUser();
+  const { fullName, avatar } = user.user_metadata;
+  const navigate = useNavigate();
   return (
     <div className="profile-popup">
       <img
-        src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+        src={`${avatar}` || "/default-user.jpg"}
         alt="Profile"
         className="profile-popup__image"
       />
-      <p className="profile-popup__text">Welcome, user</p>
-      <button className="profile-popup__icon-button">
+      <p className="profile-popup__text">Welcome, {fullName}</p>
+      <button
+        className="profile-popup__icon-button"
+        onClick={() => navigate("/update-account")}
+      >
         <HiOutlineUserCircle />
       </button>
-      <button className="profile-popup__logout">
+      <button
+        className="profile-popup__logout"
+        disabled={isLoading}
+        onClick={logout}
+      >
         <HiOutlineLogout />
       </button>
     </div>
