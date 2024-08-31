@@ -14,7 +14,7 @@ export const formatDistanceFromNow = (dateStr) => {
     return formatDistance(date, now, { addSuffix: true })
       .replace("about ", "")
       .replace("in", "In")
-      .replace("ago", "ago today");
+      .replace("ago", "ago");
   } catch (error) {
     console.error("Error parsing date:", error);
     return "Invalid date";
