@@ -34,7 +34,7 @@ export default function App() {
             <Route path="bookings" element={<Bookings />} />
             <Route path="bookings/:bookingId" element={<Booking />} />
             <Route
-              path="create-booking/:bookingId"
+              path="bookings/create-booking/:bookingId"
               element={<CreateBooking />}
             />
             <Route path="spaces" element={<Spaces />} />
