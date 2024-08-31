@@ -3,9 +3,19 @@ import { format, isToday } from "date-fns";
 import Tag from "../../ui/Tag";
 import { formatCurrency } from "../../utils/convertCurrency";
 import { formatDistanceFromNow } from "../../utils/formatDistanceFromNow";
+import { useNavigate } from "react-router-dom";
 
 function BookingRow({
-  booking: { date, hour, num_people, price, status, clients = {}, spaces = {} },
+  booking: {
+    id,
+    date,
+    hour,
+    num_people,
+    price,
+    status,
+    clients = {},
+    spaces = {},
+  },
 }) {
   const { full_name: clientName = "Unknown Client", email = "No Email" } =
     clients;
@@ -17,6 +27,8 @@ function BookingRow({
     booked: "blue",
     default: "grey",
   };
+
+  const navigate = useNavigate();
 
   const parsedDate = date ? new Date(date) : null;
   const isValidDate = parsedDate instanceof Date && !isNaN(parsedDate);
@@ -37,14 +49,16 @@ function BookingRow({
       <div className="booking-row__space">{spaceName}</div>
 
       <div className="booking-row__client">
-        <span>{clientName}</span>
+        <span>
+          {clientName} and {num_people - 1}{" "}
+          {num_people - 1 === 1 ? "person" : "people"}
+        </span>
         <span>{email}</span>
       </div>
 
       <div className="booking-row__info">
         <span>{formattedDate}</span>
         <span>{formattedTime}</span>
-        <span>{num_people} people</span>
       </div>
       <div className="booking-row__info">
         <span>
@@ -62,7 +76,12 @@ function BookingRow({
       <div className="booking-row__amount">{formatCurrency(price)}</div>
 
       <div>
-        <button className="button button--primary">Details</button>
+        <button
+          className="button button--primary"
+          onClick={() => navigate(`/bookings/${id}`)}
+        >
+          Details
+        </button>
       </div>
     </div>
   );
@@ -70,6 +89,7 @@ function BookingRow({
 
 BookingRow.propTypes = {
   booking: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     date: PropTypes.string.isRequired,
     hour: PropTypes.number.isRequired,
     num_people: PropTypes.number.isRequired,
