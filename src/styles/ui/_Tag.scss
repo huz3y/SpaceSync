@@ -1,12 +1,14 @@
 .tag {
-  display: inline-flex;
+  display: block;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+  text-align: center;
   font-size: 1.2rem;
   font-weight: 700;
   padding: 0.6rem 1.4rem;
   border-radius: 999px;
+  min-width: 15rem;
   letter-spacing: 0.05em;
   transition: background-color 0.3s ease, color 0.3s ease;
 

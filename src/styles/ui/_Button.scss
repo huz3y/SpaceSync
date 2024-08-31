@@ -49,17 +49,17 @@
   }
 
   &--danger {
-    color: var(--color-red-600);
-    background-color: var(--color-red-300);
+    color: var(--color-grey-50);
+    background-color: var(--color-red-700);
     border: none;
 
     &:hover {
-      background-color: var(--color-red-700);
+      background-color: var(--color-red-800);
       color: var(--color-grey-0);
     }
 
     &:active {
-      background-color: var(--color-red-800);
+      background-color: var(--color-red-900);
       color: var(--color-grey-0);
     }
 

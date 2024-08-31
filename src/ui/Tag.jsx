@@ -5,7 +5,7 @@ function Tag({ type, children }) {
 }
 
 Tag.propTypes = {
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
