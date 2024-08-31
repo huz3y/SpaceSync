@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import PropTypes from "prop-types";
 import { format, isToday } from "date-fns";
 import Tag from "../../ui/Tag";
@@ -34,7 +34,9 @@ function BookingRow({
     default: "grey",
   };
 
-  const parsedDate = date ? new Date(date) : null;
+  const parsedDate = useMemo(() => {
+    return date ? new Date(date) : null;
+  }, [date]);
   const isValidDate = parsedDate instanceof Date && !isNaN(parsedDate);
 
   const formattedDate = isValidDate
