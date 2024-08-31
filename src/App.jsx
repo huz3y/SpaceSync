@@ -1,5 +1,4 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
 import Bookings from "./pages/Bookings";
 import Spaces from "./pages/Spaces";
 import CreateUser from "./pages/CreateUser";
@@ -36,8 +35,7 @@ export default function App() {
               </ProtectedRoute>
             }
           >
-            <Route index element={<Navigate replace to="/dashboard" />} />
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route index element={<Navigate replace to="/bookings" />} />
             <Route path="bookings" element={<Bookings />} />
             <Route path="bookings/:bookingId" element={<Booking />} />
             <Route

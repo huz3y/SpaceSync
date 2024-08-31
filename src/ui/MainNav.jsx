@@ -1,4 +1,4 @@
-import { FiBox, FiCalendar, FiHome, FiSettings, FiUsers } from "react-icons/fi";
+import { FiBox, FiCalendar, FiSettings, FiUsers } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
 
@@ -9,12 +9,6 @@ function MainNav() {
         <Logo />
       </div>
       <ul className="MainNav__list">
-        <li className="MainNav__item">
-          <NavLink className="MainNav__link" to="/dashboard">
-            <FiHome className="MainNav__icon" />
-            <span>Home</span>
-          </NavLink>
-        </li>
         <li className="MainNav__item">
           <NavLink className="MainNav__link" to="/bookings">
             <FiCalendar className="MainNav__icon" />
