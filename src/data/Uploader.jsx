@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { isPast, isToday } from "date-fns";
 import supabase from "../services/supabase";
-import Button from "../src/ui/Button";
+import Button from "../ui/Button";
 
 import { bookings } from "./data-bookings";
 import { spaces } from "./data-spaces";
