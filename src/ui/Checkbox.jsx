@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import "./Checkbox.scss";
 
 function Checkbox({ checked, onChange, disabled = false, id, children }) {
   return (

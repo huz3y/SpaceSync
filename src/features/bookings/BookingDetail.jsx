@@ -39,7 +39,11 @@ function BookingDetail() {
           Back
         </Button>
         <Button variation="danger">Delete Booking</Button>
-        <Button variation="primary" disabled={status !== "unconfirmed"}>
+        <Button
+          variation="primary"
+          disabled={status !== "unconfirmed"}
+          onClick={() => navigate(`/create-booking/${id}`)}
+        >
           Confirm Booking
         </Button>
       </ButtonGroup>
