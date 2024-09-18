@@ -75,10 +75,10 @@ To get started with SpaceSync, follow the instructions below:
 
 ### Screenshots
 
-![Login](screenshot1.png)
-![Bookings](screenshot2.png)
-![Booking details](screenshot3.png)
-![Confirm booking](screenshot4.png)
-![Spaces](screenshot5.png)
-![Create a new user](screenshot6.png)
-![Update account details](screenshot7.png)
+![Login](./screenshots/screenshot1.png)
+![Bookings](./screenshots/screenshot2.png)
+![Booking details](./screenshots/screenshot3.png)
+![Confirm booking](./screenshots/screenshot4.png)
+![Spaces](./screenshots/screenshot5.png)
+![Create a new user](./screenshots/screenshot6.png)
+![Update account details](./screenshots/screenshot7.png)
