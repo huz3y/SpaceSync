@@ -2,10 +2,15 @@
 
 SpaceSync is a co-work space booking management web application designed to simplify the process of managing spaces, bookings, clients, and settings. The app provides a user-friendly interface for admins to manage the various aspects of co-work space bookings, ensuring efficient and streamlined operations.
 
-## Credentials
+### Credentials
 
 email: huzey@example.com
 password: 12345678
+
+### Links
+
+- **Live-url:** space-sync-azure.vercel.app
+- **GitHub-repo:** https://github.com/huz3y/SpaceSync.git
 
 ## Features
 
@@ -72,11 +77,6 @@ To get started with SpaceSync, follow the instructions below:
    ```bash
    npm run build
    ```
-
-### Links
-
-- **Live-url:** space-sync-azure.vercel.app
-- **GitHub-repo:** https://github.com/huz3y/SpaceSync.git
 
 ### Screenshots
 
