@@ -2,6 +2,11 @@
 
 SpaceSync is a co-work space booking management web application designed to simplify the process of managing spaces, bookings, clients, and settings. The app provides a user-friendly interface for admins to manage the various aspects of co-work space bookings, ensuring efficient and streamlined operations.
 
+# Credentials
+
+email: huzey@example.com
+password: 12345678
+
 ## Features
 
 - **User Management**: Create, update, and delete user accounts with ease.
