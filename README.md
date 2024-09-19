@@ -9,7 +9,7 @@ password: 12345678
 
 ### Links
 
-- **Live-url:** space-sync-azure.vercel.app
+- **Live-url:** https://space-sync-azure.vercel.app
 - **GitHub-repo:** https://github.com/huz3y/SpaceSync.git
 
 ## Features
