@@ -3,11 +3,10 @@
 SpaceSync is a co-work space booking management web application designed to simplify the process of managing spaces, bookings, clients, and settings. The app provides a user-friendly interface for admins to manage the various aspects of co-work space bookings, ensuring efficient and streamlined operations.
 
 ## Technologies used 
-Eventhough using SASS modules is preffered as it will ensure no CSS class name conflict, I decided to use plain SASS with BEM to see how effective it is compared to newer preffered methods.
-React Query was used for data fetching as it is really convinient and simplifies caching
-I did not use the latest preferred method of React Router as I do not need React Router's data fetching capabilities
-Supabase was used as backend for quick development
-
+- Eventhough using SASS modules is preffered as it will ensure no CSS class name conflict, I decided to use plain SASS with BEM to see how effective it is compared to newer preffered methods.
+- React Query was used for data fetching as it is really convinient and simplifies caching
+- I did not use the latest preferred method of React Router as I do not need React Router's data fetching capabilities
+- Supabase was used as backend for quick development
 
 ### Credentials
 
